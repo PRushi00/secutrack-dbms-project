@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #09111F;
+  --bg-secondary: #101B2D;
+  --bg-elevated: #16243A;
+  --accent-primary: #38D6C5;
+  --accent-secondary: #63A5FF;
+  --text-primary: #F3F7FC;
+  --text-secondary: #A3B2C6;
+  --status-critical: #FF626D;
+  --status-warning: #F5B942;
+  --status-success: #45C99A;
+  --border-subtle: #1E2E48;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for Operations Density */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09111F;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E2E48;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #324B70;
+}
+
+/* Card Glow & Border Accents */
+.cyber-card {
+  background: linear-gradient(180deg, rgba(22, 36, 58, 0.75) 0%, rgba(16, 27, 45, 0.85) 100%);
+  border: 1px solid rgba(36, 54, 82, 0.7);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.cyber-card:hover {
+  border-color: rgba(56, 214, 197, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(56, 214, 197, 0.08);
+}
+
+.cyber-input {
+  background-color: #0E1726;
+  border: 1px solid #243652;
+  color: #F3F7FC;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.cyber-input:focus {
+  outline: none;
+  border-color: #38D6C5;
+  box-shadow: 0 0 0 2px rgba(56, 214, 197, 0.2);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
